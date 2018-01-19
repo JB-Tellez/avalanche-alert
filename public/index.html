@@ -14,11 +14,17 @@
     crossorigin="anonymous"></script>
 
   <script>
+    
     const zone = 'cascade-west-north-baker'
 
-    $.getJSON('/forecasts/' + zone)
+    const url = '/forecasts/' + zone
+
+    // url could also be /zones
+
+    $.getJSON(url)
       .then(data => console.log(data))
       .catch(err => console.error(err))
+
   </script>
 
 </body>

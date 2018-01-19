@@ -1,9 +1,12 @@
 const express = require('express')
 const superagent = require('superagent')
 const app = express()
+const cors = require('cors')
 const NWAC_URL = 'http://www.nwac.us/api/v2'
 const PORT = process.env.PORT || 3000
-    
+
+app.use(cors())
+
 app.use(express.static('./public'))
 
 app.get('/forecasts/:zone', (req, res) => { 
